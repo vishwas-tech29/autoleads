@@ -1,9 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { supabase } from '@/lib/supabase'
 import OpenAI from 'openai'
 
 const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
+  apiKey: process.env.OPENAI_API_KEY || 'placeholder-key',
 })
 
 interface LeadData {
@@ -15,6 +14,15 @@ interface LeadData {
 
 export async function POST(request: NextRequest) {
   try {
+    // Check if Supabase is configured
+    if (!process.env.NEXT_PUBLIC_SUPABASE_URL || process.env.NEXT_PUBLIC_SUPABASE_URL === 'https://placeholder.supabase.co') {
+      return NextResponse.json(
+        { error: 'Service temporarily unavailable - database not configured' },
+        { status: 503 }
+      )
+    }
+
+    const { supabase } = await import('@/lib/supabase')
     const { chatId, message } = await request.json()
 
     if (!chatId || !message) {
@@ -136,7 +144,7 @@ export async function POST(request: NextRequest) {
           .eq('id', chatId)
 
         // Send WhatsApp notification
-        await sendWhatsAppNotification(lead, business)
+        await sendWhatsAppNotification(lead, business, supabase)
 
         // Update usage tracking for leads
         if (business.plan_status === 'trial') {
@@ -333,7 +341,7 @@ function extractLeadData(messages: any[], latestMessage: string): LeadData {
   }
 }
 
-async function sendWhatsAppNotification(lead: any, business: any) {
+async function sendWhatsAppNotification(lead: any, business: any, supabase: any) {
   try {
     const message = `🚀 *NEW ENQUIRY*
 

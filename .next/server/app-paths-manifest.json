@@ -1,11 +1,11 @@
 {
-  "/api/chat/create/route": "app/api/chat/create/route.js",
   "/_not-found/page": "app/_not-found/page.js",
+  "/api/chat/create/route": "app/api/chat/create/route.js",
   "/api/chat/send/route": "app/api/chat/send/route.js",
   "/biz/[slug]/page": "app/biz/[slug]/page.js",
   "/dashboard/page": "app/dashboard/page.js",
-  "/dashboard/setup/page": "app/dashboard/setup/page.js",
   "/login/page": "app/login/page.js",
+  "/page": "app/page.js",
   "/signup/page": "app/signup/page.js",
-  "/page": "app/page.js"
+  "/dashboard/setup/page": "app/dashboard/setup/page.js"
 }
