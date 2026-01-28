@@ -15,7 +15,7 @@ const openai = new OpenAI({
 })
 
 // Create new chat conversation
-router.post('/create', async (req, res): Promise<void> => {
+router.post('/create', async (req, res) => {
   try {
     const { businessId, visitorId, metadata } = req.body
 
@@ -107,7 +107,7 @@ router.post('/create', async (req, res): Promise<void> => {
 })
 
 // Send message in chat
-router.post('/send', async (req, res): Promise<void> => {
+router.post('/send', async (req, res) => {
   try {
     const { chatId, message } = req.body
 
