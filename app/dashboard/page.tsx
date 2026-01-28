@@ -30,47 +30,63 @@ import toast from 'react-hot-toast'
 // Mock data - replace with real data from Supabase
 const mockBusiness = {
   id: '123',
-  name: "Dr. Sharma's Dental Clinic",
+  name: "AutoLead AI Demo",
   type: 'clinic',
-  slug: 'dr-sharmas-dental-clinic-mumbai',
+  slug: 'autolead-ai-demo-testing',
   hasWebsite: true,
   planStatus: 'trial',
   trialEndsAt: new Date(Date.now() + 24 * 60 * 60 * 1000), // 24 hours from now
 }
 
 const mockStats = {
-  totalLeads: 23,
-  todayLeads: 5,
-  totalMessages: 156,
-  todayMessages: 12,
-  responseRate: 98,
-  avgResponseTime: 2.3
+  totalLeads: 47,
+  todayLeads: 8,
+  totalMessages: 234,
+  todayMessages: 18,
+  responseRate: 85,
+  avgResponseTime: 1.8
 }
 
 const mockRecentLeads = [
   {
     id: '1',
-    name: 'Rahul Kumar',
+    name: 'Test User 1',
     phone: '9876543210',
-    intent: 'Root canal treatment',
-    createdAt: new Date(Date.now() - 2 * 60 * 60 * 1000), // 2 hours ago
+    intent: 'Product inquiry - testing lead capture',
+    createdAt: new Date(Date.now() - 1 * 60 * 60 * 1000), // 1 hour ago
     status: 'new'
   },
   {
     id: '2',
-    name: 'Priya Singh',
+    name: 'Demo Lead 2',
     phone: '9876543211',
-    intent: 'Teeth cleaning appointment',
-    createdAt: new Date(Date.now() - 4 * 60 * 60 * 1000), // 4 hours ago
+    intent: 'Service information request',
+    createdAt: new Date(Date.now() - 3 * 60 * 60 * 1000), // 3 hours ago
     status: 'contacted'
   },
   {
     id: '3',
-    name: 'Amit Patel',
+    name: 'Test Contact 3',
     phone: '9876543212',
-    intent: 'Dental consultation',
-    createdAt: new Date(Date.now() - 6 * 60 * 60 * 1000), // 6 hours ago
+    intent: 'General consultation inquiry',
+    createdAt: new Date(Date.now() - 5 * 60 * 60 * 1000), // 5 hours ago
     status: 'qualified'
+  },
+  {
+    id: '4',
+    name: 'Sample Lead 4',
+    phone: '9876543213',
+    intent: 'Pricing and availability check',
+    createdAt: new Date(Date.now() - 8 * 60 * 60 * 1000), // 8 hours ago
+    status: 'new'
+  },
+  {
+    id: '5',
+    name: 'Demo User 5',
+    phone: '9876543214',
+    intent: 'Feature demonstration request',
+    createdAt: new Date(Date.now() - 12 * 60 * 60 * 1000), // 12 hours ago
+    status: 'contacted'
   }
 ]
 
@@ -160,9 +176,9 @@ export default function DashboardPage() {
                         <AlertCircle className="w-6 h-6 text-white" />
                       </div>
                       <div>
-                        <h3 className="text-lg font-semibold text-white">Free Trial Active</h3>
+                        <h3 className="text-lg font-semibold text-white">Testing Mode Active</h3>
                         <p className="text-orange-200">
-                          {timeLeft} remaining • 15 messages left • 3 leads left
+                          {timeLeft} remaining • Demo leads being generated • Testing phase
                         </p>
                       </div>
                     </div>
@@ -230,7 +246,7 @@ export default function DashboardPage() {
                       <div className="text-3xl font-bold text-white">
                         <AnimatedCounter end={mockStats.responseRate} suffix="%" />
                       </div>
-                      <p className="text-purple-300 text-xs">Excellent!</p>
+                      <p className="text-purple-300 text-xs">Testing phase</p>
                     </div>
                     <div className="w-12 h-12 bg-purple-500/30 rounded-lg flex items-center justify-center">
                       <TrendingUp className="w-6 h-6 text-purple-400" />
@@ -249,7 +265,7 @@ export default function DashboardPage() {
                       <div className="text-3xl font-bold text-white">
                         <AnimatedCounter end={mockStats.avgResponseTime} suffix="s" />
                       </div>
-                      <p className="text-orange-300 text-xs">Lightning fast</p>
+                      <p className="text-orange-300 text-xs">Demo mode</p>
                     </div>
                     <div className="w-12 h-12 bg-orange-500/30 rounded-lg flex items-center justify-center">
                       <Zap className="w-6 h-6 text-orange-400" />

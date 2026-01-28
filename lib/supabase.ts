@@ -5,6 +5,7 @@ const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
 
 export const supabase = createClient(supabaseUrl, supabaseAnonKey)
 
+// Types for the database
 export type Database = {
   public: {
     Tables: {
@@ -14,6 +15,8 @@ export type Database = {
           user_id: string
           business_name: string
           industry_type: 'clinic' | 'coaching' | 'real_estate' | 'local_service'
+          services: string[] | null
+          city: string | null
           whatsapp_number: string
           business_description: string | null
           operating_hours: Record<string, any> | null
@@ -32,6 +35,8 @@ export type Database = {
           user_id: string
           business_name: string
           industry_type: 'clinic' | 'coaching' | 'real_estate' | 'local_service'
+          services?: string[] | null
+          city?: string | null
           whatsapp_number: string
           business_description?: string | null
           operating_hours?: Record<string, any> | null
@@ -50,6 +55,8 @@ export type Database = {
           user_id?: string
           business_name?: string
           industry_type?: 'clinic' | 'coaching' | 'real_estate' | 'local_service'
+          services?: string[] | null
+          city?: string | null
           whatsapp_number?: string
           business_description?: string | null
           operating_hours?: Record<string, any> | null
@@ -72,6 +79,7 @@ export type Database = {
           status: 'active' | 'human_takeover' | 'closed'
           human_operator: string | null
           lead_qualified: boolean
+          metadata: Record<string, any> | null
           created_at: string
           updated_at: string
         }
@@ -82,6 +90,7 @@ export type Database = {
           status?: 'active' | 'human_takeover' | 'closed'
           human_operator?: string | null
           lead_qualified?: boolean
+          metadata?: Record<string, any> | null
           created_at?: string
           updated_at?: string
         }
@@ -92,6 +101,7 @@ export type Database = {
           status?: 'active' | 'human_takeover' | 'closed'
           human_operator?: string | null
           lead_qualified?: boolean
+          metadata?: Record<string, any> | null
           created_at?: string
           updated_at?: string
         }
@@ -100,7 +110,7 @@ export type Database = {
         Row: {
           id: string
           conversation_id: string
-          sender_type: 'visitor' | 'ai' | 'human'
+          sender_type: 'visitor' | 'ai' | 'human' | 'system'
           sender_id: string | null
           message_text: string
           message_type: 'text' | 'image' | 'file'
@@ -110,7 +120,7 @@ export type Database = {
         Insert: {
           id?: string
           conversation_id: string
-          sender_type: 'visitor' | 'ai' | 'human'
+          sender_type: 'visitor' | 'ai' | 'human' | 'system'
           sender_id?: string | null
           message_text: string
           message_type?: 'text' | 'image' | 'file'
@@ -120,7 +130,7 @@ export type Database = {
         Update: {
           id?: string
           conversation_id?: string
-          sender_type?: 'visitor' | 'ai' | 'human'
+          sender_type?: 'visitor' | 'ai' | 'human' | 'system'
           sender_id?: string | null
           message_text?: string
           message_type?: 'text' | 'image' | 'file'
@@ -138,7 +148,7 @@ export type Database = {
           email: string | null
           lead_source: string
           qualification_data: Record<string, any> | null
-          status: 'new' | 'contacted' | 'qualified' | 'converted'
+          status: 'new' | 'contacted' | 'qualified' | 'converted' | 'lost'
           whatsapp_sent: boolean
           whatsapp_sent_at: string | null
           owner_response: 'YES' | 'NO' | null
@@ -153,7 +163,7 @@ export type Database = {
           email?: string | null
           lead_source?: string
           qualification_data?: Record<string, any> | null
-          status?: 'new' | 'contacted' | 'qualified' | 'converted'
+          status?: 'new' | 'contacted' | 'qualified' | 'converted' | 'lost'
           whatsapp_sent?: boolean
           whatsapp_sent_at?: string | null
           owner_response?: 'YES' | 'NO' | null
@@ -168,7 +178,7 @@ export type Database = {
           email?: string | null
           lead_source?: string
           qualification_data?: Record<string, any> | null
-          status?: 'new' | 'contacted' | 'qualified' | 'converted'
+          status?: 'new' | 'contacted' | 'qualified' | 'converted' | 'lost'
           whatsapp_sent?: boolean
           whatsapp_sent_at?: string | null
           owner_response?: 'YES' | 'NO' | null

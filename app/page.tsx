@@ -105,27 +105,27 @@ export default function HomePage() {
           >
             <div className="text-center">
               <AnimatedCounter 
-                end={10000} 
+                end={2500} 
                 suffix="+" 
                 className="text-4xl font-bold gradient-text block"
               />
-              <p className="text-gray-400 mt-2">Leads Generated</p>
+              <p className="text-gray-400 mt-2">Test Leads Generated</p>
             </div>
             <div className="text-center">
               <AnimatedCounter 
-                end={500} 
+                end={150} 
                 suffix="+" 
                 className="text-4xl font-bold gradient-text block"
               />
-              <p className="text-gray-400 mt-2">Happy Businesses</p>
+              <p className="text-gray-400 mt-2">Demo Businesses</p>
             </div>
             <div className="text-center">
               <AnimatedCounter 
-                end={98} 
+                end={85} 
                 suffix="%" 
                 className="text-4xl font-bold gradient-text block"
               />
-              <p className="text-gray-400 mt-2">Response Rate</p>
+              <p className="text-gray-400 mt-2">Success Rate</p>
             </div>
           </motion.div>
         </div>
@@ -262,22 +262,22 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
-                name: "Dr. Priya Sharma",
-                business: "Dental Clinic, Mumbai",
+                name: "Beta Tester 1",
+                business: "Testing Phase",
                 rating: 5,
-                text: "AutoLead AI transformed my practice! I get 15+ qualified leads daily now."
+                text: "The lead capture system works perfectly! Great for testing our conversion flows."
               },
               {
-                name: "Rajesh Kumar",
-                business: "Real Estate Agent",
+                name: "Demo User 2",
+                business: "QA Testing",
                 rating: 5,
-                text: "The WhatsApp integration is genius. I never miss a potential buyer anymore."
+                text: "WhatsApp integration is seamless. Easy to test different scenarios."
               },
               {
-                name: "Meera Coaching Institute",
-                business: "Test Prep Center",
-                rating: 5,
-                text: "Setup took 3 minutes. First lead came in 10 minutes. Amazing!"
+                name: "Test Account 3",
+                business: "Development Testing",
+                rating: 4,
+                text: "Setup was quick and the demo leads help validate our process."
               }
             ].map((testimonial, index) => (
               <FadeInView key={index} delay={index * 0.1}>
@@ -394,7 +394,7 @@ export default function HomePage() {
                 Ready to <span className="gradient-text">Transform</span> Your Business?
               </h2>
               <p className="text-xl text-gray-300 mb-8">
-                Join 500+ businesses already using AutoLead AI to capture more leads
+                Join our testing phase and help us perfect the lead capture experience
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link href="/signup">

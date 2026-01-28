@@ -149,18 +149,18 @@ export default function LoginPage() {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="mt-8 text-center"
         >
-          <p className="text-gray-400 text-sm mb-4">Trusted by 500+ businesses</p>
+          <p className="text-gray-400 text-sm mb-4">Join our testing community</p>
           <div className="flex justify-center space-x-8">
             <div className="text-white/80">
-              <div className="text-lg font-bold gradient-text">10K+</div>
-              <div className="text-xs">Leads Generated</div>
+              <div className="text-lg font-bold gradient-text">2.5K+</div>
+              <div className="text-xs">Test Leads</div>
             </div>
             <div className="text-white/80">
-              <div className="text-lg font-bold gradient-text">98%</div>
-              <div className="text-xs">Response Rate</div>
+              <div className="text-lg font-bold gradient-text">85%</div>
+              <div className="text-xs">Success Rate</div>
             </div>
             <div className="text-white/80">
-              <div className="text-lg font-bold gradient-text">3s</div>
+              <div className="text-lg font-bold gradient-text">1.8s</div>
               <div className="text-xs">Avg Response</div>
             </div>
           </div>
