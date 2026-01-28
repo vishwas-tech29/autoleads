@@ -19,7 +19,7 @@ This implementation plan breaks down the AutoLead AI system into discrete, manag
     - Configure environment variables and basic route structure
     - _Requirements: Foundation for all backend functionality_
 
-  - [ ] 1.3 Set up Supabase integration and database schema
+  - [-] 1.3 Set up Supabase integration and database schema
     - Configure Supabase client for both frontend and backend
     - Create database tables: businesses, conversations, messages, leads, subscriptions, usage_tracking
     - Set up Row Level Security (RLS) policies
