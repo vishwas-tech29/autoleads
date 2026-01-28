@@ -1,8 +1,16 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { supabase } from '@/lib/supabase'
 
 export async function POST(request: NextRequest) {
   try {
+    // Check if Supabase is configured
+    if (!process.env.NEXT_PUBLIC_SUPABASE_URL || process.env.NEXT_PUBLIC_SUPABASE_URL === 'https://placeholder.supabase.co') {
+      return NextResponse.json(
+        { error: 'Service temporarily unavailable - database not configured' },
+        { status: 503 }
+      )
+    }
+
+    const { supabase } = await import('@/lib/supabase')
     const { businessId, visitorId, metadata } = await request.json()
 
     if (!businessId || !visitorId) {

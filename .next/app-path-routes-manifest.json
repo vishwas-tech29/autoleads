@@ -1,0 +1,11 @@
+{
+  "/api/chat/create/route": "/api/chat/create",
+  "/_not-found/page": "/_not-found",
+  "/api/chat/send/route": "/api/chat/send",
+  "/biz/[slug]/page": "/biz/[slug]",
+  "/dashboard/page": "/dashboard",
+  "/dashboard/setup/page": "/dashboard/setup",
+  "/login/page": "/login",
+  "/signup/page": "/signup",
+  "/page": "/"
+}
