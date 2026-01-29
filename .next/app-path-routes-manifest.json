@@ -4,8 +4,8 @@
   "/api/chat/send/route": "/api/chat/send",
   "/biz/[slug]/page": "/biz/[slug]",
   "/dashboard/page": "/dashboard",
-  "/login/page": "/login",
+  "/dashboard/setup/page": "/dashboard/setup",
   "/page": "/",
-  "/signup/page": "/signup",
-  "/dashboard/setup/page": "/dashboard/setup"
+  "/login/page": "/login",
+  "/signup/page": "/signup"
 }
